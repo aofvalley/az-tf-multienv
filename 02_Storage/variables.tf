@@ -9,15 +9,17 @@ variable "location" {
   default     = "westeurope"
 }
 
-variable "key_vault_name" {
-  type        = string
-  description = "Specifies a key vault name"
-}
-
-variable "use_rbac_mode" {
-  type        = bool
-  description = "Specifies to use rbac mode. (Optional)"
-  default     = null
+variable "storage_config" {
+  type = list(object({
+    name                      = string
+    account_kind              = string
+    account_tier              = string
+    account_replication_type  = string
+    access_tier               = string
+    enable_https_traffic_only = bool
+    min_tls_version           = string
+    is_hns_enabled            = bool
+  }))
 }
 
 variable "tags" {
