@@ -4,7 +4,7 @@ on:
 
 jobs:
   Plan_Dev:
-    uses: starshow85/az-tf-multienv/.github/workflows/az_tf_plan.yml@master
+    uses: starshow85/az-tf-multienv/.github/workflows/az_tf_plan.yml@main
     with:
       path: 01_Foundation                ## Path to terraform root module (Required)
       tf_version: latest                 ## Terraform version e.g: 1.1.0 Default=latest (Optional)
@@ -22,7 +22,7 @@ jobs:
 
   Deploy_Dev:
     needs: Plan_Dev
-    uses: starshow85/az-tf-multienv/.github/workflows/az_tf_apply.yml@master
+    uses: starshow85/az-tf-multienv/.github/workflows/az_tf_apply.yml@main
     with:
       path: 01_Foundation                ## Path to terraform root module (Required)
       tf_version: latest                 ## Terraform version e.g: 1.1.0 Default=latest (Optional)
@@ -38,7 +38,7 @@ jobs:
       arm_tenant_id: ${{ secrets.ARM_TENANT_ID }}             ## ARM Tenant ID
 
   Plan_Uat:
-    uses: starshow85/az-tf-multienv/.github/workflows/az_tf_plan.yml@master
+    uses: starshow85/az-tf-multienv/.github/workflows/az_tf_plan.yml@main
     with:
       path: 01_Foundation
       az_resource_group: AZ-TFBackend-RG 
@@ -55,7 +55,7 @@ jobs:
 
   Deploy_Uat:
     needs: [Plan_Uat, Deploy_Dev]
-    uses: starshow85/az-tf-multienv/.github/workflows/az_tf_apply.yml@master
+    uses: starshow85/az-tf-multienv/.github/workflows/az_tf_apply.yml@main
     with:
       path: 01_Foundation
       az_resource_group: AZ-TFBackend-RG 
@@ -70,7 +70,7 @@ jobs:
       arm_tenant_id: ${{ secrets.ARM_TENANT_ID }}
 
   Plan_Prod:
-    uses: starshow85/az-tf-multienv/.github/workflows/az_tf_plan.yml@master
+    uses: starshow85/az-tf-multienv/.github/workflows/az_tf_plan.yml@main
     with:
       path: 01_Foundation
       tf_version: latest
@@ -88,7 +88,7 @@ jobs:
 
   Deploy_Prod:
     needs: [Plan_Prod, Deploy_Uat]
-    uses: starshow85/az-tf-multienv/.github/workflows/az_tf_apply.yml@master
+    uses: starshow85/az-tf-multienv/.github/workflows/az_tf_apply.yml@main
     with:
       path: 01_Foundation
       az_resource_group: AZ-TFBackend-RG 
