@@ -15,7 +15,7 @@ storage_config = [
   },
   #ADLS2 Storage
   {
-    name                      = "aztfv2prodsa"
+    name                      = "aztfadls2prodsa"
     account_kind              = "BlockBlobStorage"
     account_tier              = "Premium"
     account_replication_type  = "ZRS"
