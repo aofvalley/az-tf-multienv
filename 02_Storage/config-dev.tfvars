@@ -4,7 +4,7 @@ location            = "westeurope"
 storage_config = [
   #V2 Storage
   {
-    name                      = "AZ-TFv2devsa"
+    name                      = "aztfv2devsa"
     account_kind              = "StorageV2"
     account_tier              = "Standard"
     account_replication_type  = "LRS"
@@ -15,7 +15,7 @@ storage_config = [
   },
   #ADLS2 Storage
   {
-    name                      = "AZ-TFv2devsa"
+    name                      = "aztfv2devsa"
     account_kind              = "BlockBlobStorage"
     account_tier              = "Premium"
     account_replication_type  = "ZRS"
