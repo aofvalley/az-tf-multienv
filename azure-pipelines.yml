@@ -14,7 +14,7 @@ steps:
     Inline: |
       # You can write your azure powershell scripts inline here. 
       # You can also pass predefined and custom variables to this script using arguments
-      
-      Set-AzSqlServerAudit -ResourceGroupName "alfonsodRG" -ServerName "alfonsodazdb" -LogAnalyticsTargetState Enabled -WorkspaceResourceId "/subscriptions/59ef6ed9-9c98-4b31-b7b9-f879439286bb/resourceGroups/tfazsqldbRG/providers/Microsoft.OperationalInsights/workspaces/alfonsodloganalytics"
+
+      Set-AzSqlServerAudit -ResourceGroupName "alfonsodRG" -ServerName "alfonsodazdb" -LogAnalyticsTargetState Enabled -WorkspaceResourceId "01b825e8-f771-46b9-b26c-264541d2577c"
     
     azurePowerShellVersion: 'LatestVersion'
