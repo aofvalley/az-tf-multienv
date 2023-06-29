@@ -12,7 +12,7 @@ pool:
 steps:
 - task: AzurePowerShell@5
   inputs:
-    azureSubscription: 'Mashour - MS Azure Subscription(558d32d5-3bab-45b9-b43d-a8c630b9dace);alfonsod - MS Azure Subscription (59ef6ed9-9c98-4b31-b7b9-f879439286bb)'
+    azureSubscription: 'Mashour - MS Azure Subscription - 558d32d5-3bab-45b9-b43d-a8c630b9dace - 72f988bf-86f1-41af-91ab-2d7cd011db47 ; alfonsod - MS Azure Subscription - 59ef6ed9-9c98-4b31-b7b9-f879439286bb - 72f988bf-86f1-41af-91ab-2d7cd011db47'
     ScriptType: 'InlineScript'
     Inline: |
       # You can write your azure powershell scripts inline here. 
