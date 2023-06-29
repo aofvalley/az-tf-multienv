@@ -17,4 +17,4 @@ steps:
 
       Set-AzSqlServerAudit -ResourceGroupName "alfonsodRG" -ServerName "alfonsodazdb" -LogAnalyticsTargetState Enabled -WorkspaceResourceId /subscriptions/59ef6ed9-9c98-4b31-b7b9-f879439286bb/resourceGroups/tfazsqldbRG/providers/Microsoft.OperationalInsights/workspaces/alfonsodloganalytics
     
-    azurePowerShellVersion: 'LatestVersion'
+    preferredAzurePowerShellVersion: '2.6.0'
