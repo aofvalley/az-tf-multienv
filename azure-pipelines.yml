@@ -1,0 +1,24 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: AzurePowerShell@5
+  inputs:
+    azureSubscription: 'alfonsod - MS Azure Subscription (59ef6ed9-9c98-4b31-b7b9-f879439286bb)'
+    ScriptType: 'InlineScript'
+    Inline: |
+      # You can write your azure powershell scripts inline here. 
+      # You can also pass predefined and custom variables to this script using arguments
+      
+      $workspaceID='/subscriptions/558d32d5-3bab-45b9-b43d-a8c630b9dace/resourceGroups/NetworkWatcherRG/providers/Microsoft.OperationalInsights/workspaces/alfonsodtestaudit'
+      
+      Set-AzSqlServerAudit -ResourceGroupName "alfonsodRG" -ServerName "alfonsodazdb" -LogAnalyticsTargetState Enabled -WorkspaceResourceId $workspaceID
+    azurePowerShellVersion: 'LatestVersion'
